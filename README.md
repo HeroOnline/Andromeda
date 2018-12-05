@@ -1,8 +1,8 @@
 # ![logo](https://github.com/liucaide/Andromeda/blob/master/imags/Andromeda.png)  Andromeda
 iOS 持续集成方案，傻瓜式一键全自动化打包、上传工具！！！告别 fastlane 、Jenkins、Travis CI
+<img src="https://github.com/liucaide/Andromeda/blob/master/imags/process%402x.png" width="200" align=center />
+<img src="https://github.com/liucaide/Andromeda/blob/master/imags/plist.jpeg" width="200" align=center />
 
-![流程](https://github.com/liucaide/Andromeda/blob/master/imags/process%402x.png =200x)
-![配置](https://github.com/liucaide/Andromeda/blob/master/imags/plist.jpeg =200x)
 ## 使用方法
 #### 直接启动程序
 
