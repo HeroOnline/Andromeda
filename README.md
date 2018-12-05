@@ -37,7 +37,7 @@ python3 Andromeda.py
 > 1、由于 Xcode 内 的 Application Loader.app 命名中有空格，在命令执行打开的时候
 会有错误 Application: No such file or directory，需将Application Loader.app中的空格去除 重命名 -> ApplicationLoader.app
 
-> 2、为不影响Xcode内正常使用Application Loader.app（没验证，一般不会在Xcode内用），建议将Application Loader.app 所在 Applications文件夹复制到 Andromeda 配置文件夹 AndromedaPlist 内（或其他地方也行）并重命名Application Loader.app
+> 2、为不影响Xcode内正常使用Application Loader.app（没验证，一般不会在Xcode内用），建议将Application Loader.app 所在 Applications文件夹复制到 Andromeda 配置文件夹 Andromeda 内（或其他地方也行）并重命名Application Loader.app
 
 > 3、在 Andromeda.plist 内正确输入 ApplicationLoader.app 地址
 
