@@ -1,5 +1,5 @@
 # ![logo](https://github.com/liucaide/Andromeda/blob/master/imags/Andromeda.png)  Andromeda
-iOS 持续集成方案，傻瓜式一键全自动化打包、上传工具！！！告别 fastlane 、Jenkins、Travis CI
+iOS 持续集成方案，傻瓜式一键全自动化打包、上传工具！！！告别 fastlane 、Jenkins、Travis CI（附加功能尚未完成）
 <img src="https://github.com/liucaide/Andromeda/blob/master/imags/process%402x.png" width="400" align=center />
 <img src="https://github.com/liucaide/Andromeda/blob/master/imags/plist.jpeg" width="400" align=center />
 
