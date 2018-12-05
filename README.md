@@ -1,5 +1,5 @@
 # ![logo](https://github.com/liucaide/Andromeda/blob/master/imags/Andromeda.png)  Andromeda
-iOS 傻瓜式一键自动化打包、上传工具（当前开发版，后期按业务拆分精简）
+iOS 持续集成方案，傻瓜式一键全自动化打包、上传工具！！！告别 fastlane 、Jenkins、Travis CI
 
 ![流程](https://github.com/liucaide/Andromeda/blob/master/imags/process%402x.png)
 ![配置](https://github.com/liucaide/Andromeda/blob/master/imags/plist.png)
