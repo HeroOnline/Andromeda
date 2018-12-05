@@ -12,7 +12,7 @@ iOS 持续集成方案，傻瓜式一键全自动化打包、上传工具！！�
 
 ~~- 2、将Andromeda文件夹 拖到 Application，配置好Andromeda.plist，启动Andromeda.app即可~~
 
-~~- 3、将 Xcode 内的 Applications 文件夹复制一份到 AndromedaPlist文件夹，并将 Application Loader.app 去除命名中空格重命名ApplicationLoader.app （/Applications/Xcode.app/Contents/Applications）原因见注意事项~~
+~~- 3、将 Xcode 内的 Applications 文件夹复制一份到 Andromeda文件夹，并将 Application Loader.app 去除命名中空格重命名ApplicationLoader.app （/Applications/Xcode.app/Contents/Applications）原因见注意事项~~
 
 ~~- 4、按说明格式正确配置 Andromeda.plist~~
 
