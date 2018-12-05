@@ -56,7 +56,7 @@
 			<string></string>
 		</dict>
 		<key>xc_path</key>
-		<string>/Users/lcd/Desktop/TargetA/TargetA.xcodeproj</string>
+		<string>/Users/myname/Desktop/TargetA/TargetA.xcodeproj</string>
 	</dict>
 	<key>TargetB</key>
 	<dict>
@@ -112,7 +112,7 @@
 			<string></string>
 		</dict>
 		<key>xc_path</key>
-		<string>/Users/myname/Desktop/TargetA/TargetA.xcworkspace</string>
+		<string>/Users/myname/Desktop/TargetB/TargetB.xcworkspace</string>
 	</dict>
 	<key>root_info</key>
 	<dict>
