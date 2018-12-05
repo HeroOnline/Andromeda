@@ -5,19 +5,24 @@ iOS 持续集成方案，傻瓜式一键全自动化打包、上传工具！！�
 ![配置](https://github.com/liucaide/Andromeda/blob/master/imags/plist.png)
 ## 使用方法
 直接启动程序
-☹️构建的Andromeda.app与debug时运行不一致，需在Python3环境下运行
-~~- 1、将[app]()文件夹的 Andromeda.zip下载并解压。
-- 2、将Andromeda文件夹 拖到 Application。
-~~- 3、将 Xcode 内的 Applications 文件夹复制一份到 AndromedaPlist文件夹，并将 Application Loader.app 去除命名中空格重命名ApplicationLoader.app （/Applications/Xcode.app/Contents/Applications）原因见注意事项
-- 4、按说明格式正确配置 Andromeda.plist 
-~~- 5、启动 Andromeda.app
 
-## 直接启动程序
+☹️构建的Andromeda.app与debug时运行不一致，需在Python3环境下运行
+
+~~- 1、将[app]()文件夹的 Andromeda.zip下载并解压。~~
+
+~~- 2、将Andromeda文件夹 拖到 Application。~~
+
+~~- 3、将 Xcode 内的 Applications 文件夹复制一份到 AndromedaPlist文件夹，并将 Application Loader.app 去除命名中空格重命名ApplicationLoader.app （/Applications/Xcode.app/Contents/Applications）原因见注意事项~~
+
+~~- 4、按说明格式正确配置 Andromeda.plist~~
+
+~~- 5、启动 Andromeda.app~~
+
+#### 直接启动程序
 ```
 python3 Andromeda.py
 ```
-## HTTP 服务启动程序
-调用说明:
+#### HTTP 服务启动程序
 ```
 // 通过浏览器内网访问
 // target : 可填，项目 Target，对应plist中[root_info][Target]，填写则修改plist
