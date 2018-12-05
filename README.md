@@ -23,6 +23,7 @@ iOS 持续集成方案，傻瓜式一键全自动化打包、上传工具！！�
 python3 Andromeda.py
 ```
 #### HTTP服务启动程序
+如果你使用另一台Mac打包，那么可以启用HTTP服务，只需调用接口即可启动整个流程
 ```
 // 通过浏览器内网访问
 // target : 可填，项目 Target，对应plist中[root_info][Target]，填写则修改plist
