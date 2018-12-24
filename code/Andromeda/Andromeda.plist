@@ -11,8 +11,6 @@
 			<key>password</key>
 			<string></string>
 		</dict>
-		<key>debug</key>
-		<true/>
 		<key>fir</key>
 		<dict>
 			<key>token</key>
@@ -20,35 +18,37 @@
 			<key>type</key>
 			<string>Adhoc</string>
 		</dict>
-		<key>pgyer</key>
+		<key>git</key>
 		<dict>
-			<key>api_key</key>
-			<string>1e698cbf7970645bcc7e</string>
-			<key>password</key>
+			<key>git_path</key>
 			<string></string>
-			<key>type</key>
-			<integer>1</integer>
-			<key>user_key</key>
-			<string>1e698cbf7970645bcc7e</string>
 		</dict>
+		<key>ipaType</key>
+		<integer>1</integer>
 		<key>notification</key>
 		<dict>
 			<key>email_from_name</key>
 			<string>xxxxx@126.com</string>
 			<key>email_from_pwd</key>
 			<string></string>
+			<key>email_smtp</key>
+			<string>smtp.126.com</string>
 			<key>email_to</key>
 			<array>
 				<string>xxxxx@163.com</string>
 				<string>xxxxx@qq.com</string>
 			</array>
-			<key>email_smtp</key>
-			<string>smtp.126.com</string>
 		</dict>
-		<key>git</key>
+		<key>pgyer</key>
 		<dict>
-			<key>git_path</key>
+			<key>api_key</key>
+			<string>1e698cd80f687772babf7970645bcc7e</string>
+			<key>password</key>
 			<string></string>
+			<key>type</key>
+			<integer>1</integer>
+			<key>user_key</key>
+			<string>64838e4d304640eff69c8c25bccb120e</string>
 		</dict>
 		<key>svn</key>
 		<dict>
@@ -56,7 +56,7 @@
 			<string></string>
 		</dict>
 		<key>xc_path</key>
-		<string>/Users/myname/Desktop/TargetA/TargetA.xcodeproj</string>
+		<string>/Users/xxxx/Desktop/TargetA/TargetA.xcodeproj</string>
 	</dict>
 	<key>TargetB</key>
 	<dict>
@@ -67,8 +67,6 @@
 			<key>password</key>
 			<string></string>
 		</dict>
-		<key>debug</key>
-		<true/>
 		<key>fir</key>
 		<dict>
 			<key>token</key>
@@ -79,22 +77,22 @@
 		<key>pgyer</key>
 		<dict>
 			<key>api_key</key>
-			<string>1e698cbf7970645bcc7e</string>
+			<string>1e698c2babf7970645bcc7e</string>
 			<key>password</key>
 			<string></string>
 			<key>type</key>
 			<integer>1</integer>
 			<key>user_key</key>
-			<string>1e698cbf7970645bcc7e</string>
+			<string>6483869c8c25bccb120e</string>
 		</dict>
 		<key>notification</key>
 		<dict>
-			<key>email_smtp</key>
-			<string>smtp.126.com</string>
 			<key>email_from_name</key>
 			<string>xxxxx@126.com</string>
 			<key>email_from_pwd</key>
 			<string></string>
+			<key>email_smtp</key>
+			<string>smtp.126.com</string>
 			<key>email_to</key>
 			<array>
 				<string>xxxxx@163.com</string>
@@ -111,19 +109,21 @@
 			<key>svn_path</key>
 			<string></string>
 		</dict>
+		<key>ipaType</key>
+		<integer>2</integer>
 		<key>xc_path</key>
-		<string>/Users/myname/Desktop/TargetB/TargetB.xcworkspace</string>
+		<string>/Users/lcd/Desktop/TW/xxxxx/TargetB.xcworkspace</string>
 	</dict>
 	<key>root_info</key>
 	<dict>
 		<key>Http_Serve</key>
 		<true/>
 		<key>Path_altool</key>
-		<string>/Users/myname/Desktop/MyWorking/Andromeda/code/Andromeda/Applications/ApplicationLoader.app/Contents/Frameworks/ITunesSoftwareService.framework/Versions/A/Support/altool</string>
+		<string>/Users/xxx/Desktop/MyWorking/Andromeda/code/Andromeda/Applications/ApplicationLoader.app/Contents/Frameworks/ITunesSoftwareService.framework/Versions/A/Support/altool</string>
 		<key>Path_ipa_plist</key>
-		<string>/Users/myname/Desktop/MyWorking/Andromeda/code/Andromeda/ArchivePlist</string>
+		<string>/Users/xxx/Desktop/MyWorking/CDKit/Andromeda/code/Andromeda/ArchivePlist</string>
 		<key>Target</key>
-		<string>TargetA</string>
+		<string>TargetB</string>
 		<key>a_</key>
 		<string></string>
 		<key>a_instruction</key>
@@ -138,16 +138,16 @@
 		<string>fir.im 账号相关，填写标识上传，不填写表示不上传到该平台</string>
 		<key>c_pgyer_instruction</key>
 		<string>蒲公英账号相关，填写表示上传到该平台，不填写表示不上传到该平台，填写信息为参考：https://www.pgyer.com/doc/api#uploadApp</string>
-		<key>d_git_instruction</key>
-		<string>git 服务</string>
-		<key>d_svn_instruction</key>
-		<string>svn 服务</string>
-		<key>d_Target_instruction</key>
-		<string>现在你需要填写常驻打包项目的 Target，以一键启动打包上传流程</string>
 		<key>d_Path_altool_instruction</key>
 		<string>由于默认Xcode包内的Application Loader.app 名字中间有空格，执行命令是出错，需重命名将空格去除，建议是将其所在Applications拷贝一份。</string>
 		<key>d_Path_ipa_plist_instruction</key>
 		<string>构建打包Debug、Release所需配置文件存放路径</string>
+		<key>d_Target_instruction</key>
+		<string>现在你需要填写常驻打包项目的 Target，以一键启动打包上传流程</string>
+		<key>d_git_instruction</key>
+		<string>git 服务</string>
+		<key>d_svn_instruction</key>
+		<string>svn 服务</string>
 	</dict>
 </dict>
 </plist>

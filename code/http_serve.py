@@ -20,16 +20,16 @@ app = Flask(__name__)
 api = flask_restful.Api(app)
 
 
-def http_serve_value(tag, debug):
+def http_serve_value(tag, type):
     obj = read_andromeda_plist()
     if len(tag) > 0:
         dic = obj.get(tag)
         if dic:
             obj['root_info']['Target'] = tag
 
-    if len(debug) > 0:
+    if len(type) > 0:
         t = obj['root_info']['Target']
-        obj[t]['debug'] = bool(debug)
+        obj[t]['ipaType'] = int(type)
 
     write_andromeda_plist(obj)
     launch_build()
@@ -40,14 +40,14 @@ class Http(flask_restful.Resource):
         global http_source
         params = request.values
         target = ''
-        debug = ''
+        type = ''
         if params.get('target'):
             target = params.get('target')
-        if params.get('debug'):
-            debug = params.get('debug')
+        if params.get('type'):
+            type = params.get('type')
 
         try:
-            http_serve_value(target, debug)
+            http_serve_value(target, type)
             res = json.dumps('succeed', ensure_ascii=False)
         except Exception as e:
             res = json.dumps(e, ensure_ascii=False)
@@ -66,5 +66,5 @@ class Serve:
 
 # if __name__ == '__main__':
 #     app.run(debug=False, port=8989, host='0.0.0.0')
-#     # 通过浏览器访问 http://192.168.0.190:8989/ipa?target=''&debug=1
+#     # 通过浏览器访问 http://192.168.0.190:8989/ipa?target=''&type=1
 

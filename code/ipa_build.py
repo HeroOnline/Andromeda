@@ -20,20 +20,20 @@ from cd_tools import *
 
 
 class Archive(object):
-    def __init__(self, path, export_plist, target, is_workspace, build_type):
+    def __init__(self, path, export_plist, target, is_workspace, type):
         """
         :param path: 项目文件夹路径
         :param export_plist: 打包配置文件
         :param target: 项目 target
         :param is_workspace: .xcworkspace or .xcodeproj
-        :param build_type: Debug or Release
+        :param type: 1--3 Debug or -0 Release
         """
         print('---------->')
         print('项目目录：', path)
         print('配置文件：', export_plist)
         print('target：', target)
         print('is_workspace：', is_workspace)
-        print('build_type：', build_type)
+        print('build_type：', type)
         print('---------->')
 
         self.path = path
@@ -49,10 +49,10 @@ class Archive(object):
         time = '-'.join(arr)
         self.archive_name = target + '-' + time
 
-        self.ipa_path = path + ('/ipas/Release/' if build_type else '/ipas/Debug/') + time
+        self.ipa_path = path + ('/ipas/Release/' if type == 0 else '/ipas/Debug/') + time
 
         self.is_workspace = is_workspace
-        self.build_type = 'Release' if build_type else 'Debug'
+        self.build_type = 'Release' if type == 0 else 'Debug'
 
         self.__clean()
         self.__build()

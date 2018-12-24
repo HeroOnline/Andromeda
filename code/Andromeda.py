@@ -45,9 +45,9 @@ def build_for_target():
 # 查看是否启动 http 服务 —— 启动服务
 def http_serve():
     """
-    通过浏览器访问局域网内 http://192.168.0.190:8989/ipa?target=''&debug=1
-    target 项目Target
-    debug 参数 是否debug 打包
+    通过浏览器访问局域网内 http://192.168.0.190:8989/ipa?target=''&type=3
+    target(可选) 项目Target
+    type(可选) 参数 构建 的IPA类型 0:appstore / 1:adhoc / 2:enterprise / 3:development
     :return:
     """
     Serve()

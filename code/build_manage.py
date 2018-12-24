@@ -29,10 +29,11 @@ from send_email import *
 plist_path = 'Andromeda/Andromeda.plist'
 info_plist = {}
 build_tag = ''
-is_debug = True
+ipa_type = 0
 plist_path_adhoc = ''
 plist_path_appstore = ''
-
+plist_path_development = ''
+plist_path_enterprise = ''
 
 # 读取plist 文件
 def read_andromeda_plist():
@@ -65,20 +66,37 @@ def launch_build():
     global build_tag
     global plist_path_adhoc
     global plist_path_appstore
-    global is_debug
+    global plist_path_development
+    global plist_path_enterprise
+    global ipa_type
     info_plist = read_andromeda_plist()
     plist_path_adhoc = info_plist['root_info']['Path_ipa_plist'] + '/ipaAdHoc.plist'
     plist_path_appstore = info_plist['root_info']['Path_ipa_plist'] + '/ipaAppStore.plist'
+    plist_path_development = info_plist['root_info']['Path_ipa_plist'] + '/ipaDevelopment.plist'
+    plist_path_enterprise = info_plist['root_info']['Path_ipa_plist'] + '/ipaEnterprise.plist'
+
     build_tag = info_plist['root_info']['Target']
-    is_debug = info_plist[build_tag]['debug']
+    ipa_type = info_plist[build_tag]['ipaType']
     build_ipa()
 
 def build_ipa():
-    global is_debug
+    global ipa_type
     global plist_path_adhoc
     global plist_path_appstore
+    global plist_path_development
+    global plist_path_enterprise
+
     info = info_plist[build_tag]
-    buidPlist_path = plist_path_adhoc if is_debug else plist_path_appstore
+    buidPlist_path = plist_path_adhoc
+    if ipa_type == 0:
+        buidPlist_path = plist_path_appstore
+    elif ipa_type == 1:
+        buidPlist_path = plist_path_adhoc
+    elif ipa_type == 2:
+        buidPlist_path = plist_path_enterprise
+    elif ipa_type == 3:
+        buidPlist_path = plist_path_development
+
     xc_path = info['xc_path']
     is_workspace = xc_path.endswith('.xcworkspace')
     t = '/'
@@ -87,14 +105,14 @@ def build_ipa():
     main_path = t.join(list)
 
     try:
-        ipa = Archive(main_path, buidPlist_path, build_tag, is_workspace, not is_debug)
+        ipa = Archive(main_path, buidPlist_path, build_tag, is_workspace, ipa_type)
     except Exception as e:
         print('---------->', e, '---------->')
     else:
         ipa_path = ipa.ipa_path + '/' + ipa.target + '.ipa'  # 打包好的IPA文件地址
         if os.path.exists(ipa_path):
             ipa_plist = read_plist_from_ipa(ipa_path)
-            if is_debug:
+            if ipa_type > 0:
                 to_fir(ipa_path, ipa_plist)
                 to_pgyer(ipa_path)
             else:
