@@ -1,8 +1,10 @@
 # ![logo](https://github.com/liucaide/Andromeda/blob/master/imags/Andromeda.png)  Andromeda
 iOS 持续集成方案，傻瓜式一键全自动化打包、上传工具！！！告别 fastlane 、Jenkins（附加功能尚未完成）
 > 前言：目前市面上iOS开发持续集成的方案很多，在主流的分发平台fir、蒲公英都有相应的方案介绍（fastlane，Jenkins）;但就实际需求来说还是不够友好，在前面使用Python为公司开发两个自动化脚本之余，产生使用Python开发一个完全傻瓜式的自动化脚本，并满足自身需求。
-<img src="https://github.com/liucaide/Andromeda/blob/master/imags/process%402x.png" width="400" align=center />
+
+<img src="https://github.com/liucaide/Andromeda/blob/master/imags/process%402x.png" width="400" align=left />
 <img src="https://github.com/liucaide/Andromeda/blob/master/imags/plist%402x.png" width="400" align=center />
+
 
 ## 需求来源
 - 可运行脚本 或 集成App使用，傻瓜式运行
