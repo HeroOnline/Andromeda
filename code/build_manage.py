@@ -25,6 +25,10 @@ from to_fir import *
 from to_appstore import *
 from to_pgyer import *
 from send_email import *
+from for_git import *
+from for_svn import *
+from for_pod import *
+
 
 plist_path = 'Andromeda/Andromeda.plist'
 info_plist = {}
@@ -34,6 +38,7 @@ plist_path_adhoc = ''
 plist_path_appstore = ''
 plist_path_development = ''
 plist_path_enterprise = ''
+
 
 # 读取plist 文件
 def read_andromeda_plist():
@@ -61,7 +66,7 @@ def write_andromeda_plist(obj):
     write_plist(plist_path, obj)
 
 
-def launch_build():
+def launch_build(pod=''):
     global info_plist
     global build_tag
     global plist_path_adhoc
@@ -77,9 +82,12 @@ def launch_build():
 
     build_tag = info_plist['root_info']['Target']
     ipa_type = info_plist[build_tag]['ipaType']
-    build_ipa()
 
-def build_ipa():
+    pull_git()
+    pull_svn()
+    build_ipa(pod)
+
+def build_ipa(pod=''):
     global ipa_type
     global plist_path_adhoc
     global plist_path_appstore
@@ -104,6 +112,9 @@ def build_ipa():
     list.pop()
     main_path = t.join(list)
 
+    if len(pod) > 0:
+        pod_install(main_path, pod)
+
     try:
         ipa = Archive(main_path, buidPlist_path, build_tag, is_workspace, ipa_type)
     except Exception as e:
@@ -121,6 +132,22 @@ def build_ipa():
             print('----------> \n 错误，未检索到 ipa 文件,可能打包不成功 \n---------->')
     finally:
         pass
+
+
+def pull_git():
+    andromeda_plist = read_andromeda_plist()
+    tag = andromeda_plist['root_info']['Target']
+    path = andromeda_plist[tag]['git']['git_path']
+    if len(path) > 0:
+        git_pull(path)
+
+
+def pull_svn():
+    andromeda_plist = read_andromeda_plist()
+    tag = andromeda_plist['root_info']['Target']
+    path = andromeda_plist[tag]['svn']['svn_path']
+    if len(path) > 0:
+        svn_update(path)
 
 
 def to_fir(ipa_path, ipa_plist):

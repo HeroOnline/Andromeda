@@ -20,7 +20,7 @@ app = Flask(__name__)
 api = flask_restful.Api(app)
 
 
-def http_serve_value(tag, type):
+def http_serve_value(tag, type, pod=''):
     obj = read_andromeda_plist()
     if len(tag) > 0:
         dic = obj.get(tag)
@@ -32,7 +32,7 @@ def http_serve_value(tag, type):
         obj[t]['ipaType'] = int(type)
 
     write_andromeda_plist(obj)
-    launch_build()
+    launch_build(pod)
 
 
 class Http(flask_restful.Resource):
@@ -41,13 +41,15 @@ class Http(flask_restful.Resource):
         params = request.values
         target = ''
         type = ''
+        pod = ''
         if params.get('target'):
             target = params.get('target')
         if params.get('type'):
             type = params.get('type')
-
+        if params.get('pod'):
+            pod = params.get('pod')
         try:
-            http_serve_value(target, type)
+            http_serve_value(target, type, pod)
             res = json.dumps('succeed', ensure_ascii=False)
         except Exception as e:
             res = json.dumps(e, ensure_ascii=False)

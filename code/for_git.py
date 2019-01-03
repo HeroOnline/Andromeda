@@ -34,5 +34,5 @@ def git_pull(path):
 
 
 # if __name__ == '__main__':
-#     path = '~/Desktop/SIGOODSNEW/SIGOODS'
+#     path = '/Users/lcd/Desktop/MyWorking/CDKit/Andromeda'
 #     git_pull(path)

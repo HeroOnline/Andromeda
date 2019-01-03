@@ -1,5 +1,5 @@
 # ![logo](https://github.com/liucaide/Andromeda/blob/master/imags/Andromeda.png)  Andromeda
-iOS 持续集成方案，傻瓜式一键全自动化打包、上传工具！！！告别 fastlane 、Jenkins（附加功能尚未完成）
+iOS 持续集成方案，傻瓜式一键全自动化打包、上传工具！！！可告别 F 、J（持续更新中，附加功能尚未完成）
 > 前言：目前市面上iOS开发持续集成的方案很多，在主流的分发平台fir、蒲公英都有相应的方案介绍（fastlane，Jenkins）;但就实际需求来说还是不够友好，在前面使用Python为公司开发两个自动化脚本之余，产生使用Python开发一个完全傻瓜式的自动化脚本，并满足自身需求。
 
 <img src="https://github.com/liucaide/Andromeda/blob/master/imags/process%402x.png" width="400" align=left />
@@ -9,7 +9,7 @@ iOS 持续集成方案，傻瓜式一键全自动化打包、上传工具！！�
 ## 需求来源
 - 可运行脚本 或 集成App使用，傻瓜式运行
 
-- 无需配置运行环境（Mac 自带Python 2.7）
+- 无需配置运行环境（构建Mac App）
 
 - 随身携带，即插即用
 
@@ -26,7 +26,7 @@ iOS 持续集成方案，傻瓜式一键全自动化打包、上传工具！！�
 ## 使用方法
 #### 直接启动程序
 
-☹️构建的Andromeda.app与Development时运行不一致，问题尚未明确
+☹️构建的Andromeda.app与开发测试时运行不一致，问题尚未明确
 
 ~~- 1、将[app]()文件夹的 Andromeda.zip下载并解压。~~
 
@@ -40,9 +40,7 @@ iOS 持续集成方案，傻瓜式一键全自动化打包、上传工具！！�
 
 #### python 命令启动程序
 ```
-python Andromeda.py // python2 暂不兼容
-or
-python3 Andromeda.py
+python3 Andromeda.py  (不考虑兼容 Python 2)
 ```
 #### HTTP服务启动程序
 如果你使用另一台Mac打包，那么可以启用HTTP服务，只需调用接口即可启动整个流程
@@ -51,10 +49,11 @@ python3 Andromeda.py
 /*
 target(可选) 项目Target
 type(可选) 参数 构建 的IPA类型 0:appstore / 1:adhoc / 2:enterprise / 3:development
+pod (可选) 执行pod 指令  install  update   update MJRefresh ....
 */
 http://192.168.0.190:8989/ipa
 or
-http://192.168.0.190:8989/ipa?target='TargetA'&type=0
+http://192.168.0.190:8989/ipa?target='TargetA'&type=0&pod=update MJRefresh
 ```
 
 ## 关于 Andromeda

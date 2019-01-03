@@ -21,8 +21,6 @@ __author__ = 'LCD'
 import os
 from build_manage import *
 from http_serve import *
-from for_git import *
-from for_svn import *
 
 # 读取plist 文件
 def setup():
@@ -45,27 +43,16 @@ def build_for_target():
 # 查看是否启动 http 服务 —— 启动服务
 def http_serve():
     """
-    通过浏览器访问局域网内 http://192.168.0.190:8989/ipa?target=''&type=3
+    通过浏览器访问局域网内 http://192.168.0.190:8989/ipa?target=''&type=3&pod=install
     target(可选) 项目Target
     type(可选) 参数 构建 的IPA类型 0:appstore / 1:adhoc / 2:enterprise / 3:development
+    pod (可选) 执行pod 指令  install  update   update MJRefresh ....
     :return:
     """
     Serve()
 
 
-def pull_git():
-    andromeda_plist = read_andromeda_plist()
-    tag = andromeda_plist['root_info']['Target']
-    path = andromeda_plist[tag]['git']['git_path']
-    if len(path) > 0:
-        git_pull()
 
-def pull_svn():
-    andromeda_plist = read_andromeda_plist()
-    tag = andromeda_plist['root_info']['Target']
-    path = andromeda_plist[tag]['svn']['svn_path']
-    if len(path) > 0:
-        svn_update()
 
 # info_t = """
 # 第一次启动，需要按说明格式正确配置 Andromeda.plist，

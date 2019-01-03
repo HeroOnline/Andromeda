@@ -16,7 +16,7 @@ from email.header import Header
 
 def email_send(fname, fpwd, toname, smtp, app_address=''):
     subject = """
-    <p>新的测试包已经上传</p>
+    <p>^_^ 新的测试包已经上传 ^_^</p>
     <p><a href="%s">测试包链接:%s</a></p>
     """ % (app_address.replace("https", "http"), app_address.replace("https", "http"))
     # Https 会有时发送失败

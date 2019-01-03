@@ -20,11 +20,15 @@ def svn_update(path):
         % (path)
     ok = os.system(s)
     print('---------->', ok)
+
     if ok > 0:
-        raise Exception("svn update Error !")
+        if ok == 256:
+            raise Exception("You need to upgrade the working copy first! Please see the 'svn upgrade' command")
+        else:
+            raise Exception("svn update Error !")
     else:
         pass
 
 # if __name__ == '__main__':
-#     path = '~/Desktop/SIGOODSNEW'
+#     path = '/Users/lcd/Desktop/TW/AUX_Bu'
 #     svn_update(path)

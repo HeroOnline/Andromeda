@@ -43,3 +43,6 @@ def upload_to_pgyer(file, apikey, ukey, type=1, pwd='', des=''):
         # print(r.json())
     finally:
         pass
+
+
+# if __name__ == '__main__':
