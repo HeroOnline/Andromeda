@@ -109,14 +109,20 @@ def build_ipa(pod=''):
     is_workspace = xc_path.endswith('.xcworkspace')
     t = '/'
     list = xc_path.split('/')
+
+    # 取得项目 target
+    project = list[-1]
+    schemes = project.split('.')[-1]
+    # 删除 最后一个元素 获得文件目录
     list.pop()
     main_path = t.join(list)
+
 
     if len(pod) > 0:
         pod_install(main_path, pod)
 
     try:
-        ipa = Archive(main_path, buidPlist_path, build_tag, is_workspace, ipa_type)
+        ipa = Archive(main_path, buidPlist_path, schemes, is_workspace, ipa_type)
     except Exception as e:
         print('---------->', e, '---------->')
     else:

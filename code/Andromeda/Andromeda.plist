@@ -56,7 +56,7 @@
 			<string></string>
 		</dict>
 		<key>xc_path</key>
-		<string>/Users/xxxx/Desktop/TargetA/TargetA.xcodeproj</string>
+		<string>/Users/xxxx/Desktop/WorkA/Project.xcodeproj</string>
 	</dict>
 	<key>TargetB</key>
 	<dict>
@@ -112,7 +112,7 @@
 		<key>ipaType</key>
 		<integer>2</integer>
 		<key>xc_path</key>
-		<string>/Users/xxx/Desktop/TW/xxxxx/TargetB.xcworkspace</string>
+		<string>/Users/xxx/Desktop/WorkB/Project.xcworkspace</string>
 	</dict>
 	<key>root_info</key>
 	<dict>
@@ -127,7 +127,7 @@
 		<key>a_</key>
 		<string></string>
 		<key>a_instruction</key>
-		<string>这里介绍使用方法，下一级的字典 key（proj_target） 请以是项目Target命名，将会根据Target检索需要打包的项目， value 部分，必须正确填写，key值不可修改</string>
+		<string>这里介绍使用方法，下一级的字典Key -&gt; Target 对应每个项目，将会根据key检索需要打包的项目， value 部分，必须正确填写，key值不可修改</string>
 		<key>b_http_instruction</key>
 		<string>是否提供内网http唤起打包服务？</string>
 		<key>b_xc_path_instruction</key>
@@ -143,7 +143,7 @@
 		<key>d_Path_ipa_plist_instruction</key>
 		<string>构建打包Debug、Release所需配置文件存放路径</string>
 		<key>d_Target_instruction</key>
-		<string>现在你需要填写常驻打包项目的 Target，以一键启动打包上传流程</string>
+		<string>现在你需要填写常驻打包项目的 Key 标签，以一键启动打包上传流程</string>
 		<key>d_git_instruction</key>
 		<string>git 服务</string>
 		<key>d_svn_instruction</key>
