@@ -112,7 +112,7 @@ def build_ipa(pod=''):
 
     # 取得项目 target
     project = list[-1]
-    schemes = project.split('.')[-1]
+    schemes = project.split('.')[0]
     # 删除 最后一个元素 获得文件目录
     list.pop()
     main_path = t.join(list)
