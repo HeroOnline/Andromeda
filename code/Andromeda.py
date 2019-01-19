@@ -63,6 +63,7 @@ def http_serve():
 setup()
 
 # if __name__ == '__main__':
-#     setup()
+#     http_serve_value('ProjectB', '1')
+    # setup()
 
 

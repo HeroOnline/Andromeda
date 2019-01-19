@@ -215,6 +215,7 @@ def to_app_store(ipa_path):
 
 
 def send_email(app_address):
+    name = info_plist[build_tag]['projectName']
     info = info_plist[build_tag]['notification']
     if len(info['email_from_name']) > 0 \
             and len(info['email_from_pwd']) > 0 \
@@ -224,4 +225,5 @@ def send_email(app_address):
                    info['email_from_pwd'],
                    info['email_to'],
                    info['email_smtp'],
-                   app_address)
+                   app_address,
+                   name)

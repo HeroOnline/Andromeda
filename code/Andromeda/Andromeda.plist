@@ -57,6 +57,8 @@
 		</dict>
 		<key>xc_path</key>
 		<string>/Users/xxxx/Desktop/WorkA/Project.xcodeproj</string>
+		<key>projectName</key>
+		<string>客户端</string>
 	</dict>
 	<key>TargetB</key>
 	<dict>
@@ -113,6 +115,8 @@
 		<integer>2</integer>
 		<key>xc_path</key>
 		<string>/Users/xxx/Desktop/WorkB/Project.xcworkspace</string>
+		<key>projectName</key>
+		<string>业务端</string>
 	</dict>
 	<key>root_info</key>
 	<dict>
