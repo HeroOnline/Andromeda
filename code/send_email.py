@@ -25,10 +25,9 @@ def email_send(fname, fpwd, toname, smtp, app_address='', name='', log='无'):
     <html>
     <head> 
     <meta charset="utf-8"> 
-    <title>新包上传(runoob.com)</title> 
+    <title>iOS测试</title> 
     </head>
     <body>
-    
     <p><h2>🇨🇳 新的iOS测试包已上传 🇨🇳 </h2></p>
     <p><h3><a href="%s">点我下载:%s</a></h2></p>
     <p><h3>项目：%s</h3></p>
@@ -41,7 +40,7 @@ def email_send(fname, fpwd, toname, smtp, app_address='', name='', log='无'):
     msg = MIMEText(subject, 'html', 'utf-8')
     msg['from'] = fname
     msg['to'] = ",".join(toname)
-    msg['subject'] = Header('新的测试包已经上传', 'utf-8')
+    msg['subject'] = Header('新的iOS测试包已上传', 'utf-8')
     print('---------->发送邮件')
     try:
         server = smtplib.SMTP_SSL()
