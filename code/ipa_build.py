@@ -20,7 +20,7 @@ from cd_tools import *
 
 
 class Archive(object):
-    def __init__(self, path, export_plist, target, is_workspace, type):
+    def __init__(self, path, export_plist, target, is_workspace, type, code_sign, profile_udid, bundle_id):
         """
         :param path: 项目文件夹路径
         :param export_plist: 打包配置文件
@@ -39,6 +39,9 @@ class Archive(object):
         self.path = path
         self.export_plist = export_plist
         self.target = target
+        self.code_sign = code_sign
+        self.profile_udid = profile_udid
+        self.bundle_id = bundle_id
 
         self.archive_path = path + '/archives'
         time = cd_time_now()
@@ -55,7 +58,11 @@ class Archive(object):
         self.build_type = 'Release' if type == 0 else 'Debug'
 
         self.__clean()
-        self.__build()
+        if profile_udid == "":
+            self.__build()
+        else:
+            self.__build_config()
+
         self.__ipa()
 
 
@@ -78,8 +85,26 @@ class Archive(object):
         s = "cd %s;" \
             "xcodebuild archive %s " \
             "-scheme %s " \
+            "-configuration %s" \
             "-archivePath %s/%s " \
-            % (self.path, build, self.target, self.archive_path, self.archive_name)
+            % (self.path, build, self.target, self.build_type, self.archive_path, self.archive_name)
+        ok = os.system(s)
+        if ok > 0:
+            raise Exception("Archive Error !")
+        else:
+            pass
+
+    def __build_config(self):
+        build = "-workspace %s.xcworkspace" % self.target if self.is_workspace else "-project %s.xcodeproj" % self.target
+        s = "cd %s;" \
+            "xcodebuild archive %s " \
+            "-scheme %s " \
+            "-configuration %s" \
+            "-archivePath %s/%s " \
+            "clean archive build CODE_SIGN_IDENTITY=%s" \
+            "PROVISIONING_PROFILE=%s" \
+            "PRODUCT_BUNDLE_IDENTIFIER=%s" \
+            % (self.path, build, self.target, self.build_type, self.archive_path, self.archive_name, self.code_sign, self.profile_udid, self.bundle_id)
         ok = os.system(s)
         if ok > 0:
             raise Exception("Archive Error !")
@@ -101,7 +126,6 @@ class Archive(object):
             raise Exception("Export Error !")
         else:
             pass
-
 
 """
 旧版打包方式 8.3以下

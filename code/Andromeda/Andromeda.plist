@@ -11,6 +11,10 @@
 			<key>password</key>
 			<string></string>
 		</dict>
+		<key>bundle_id</key>
+		<string></string>
+		<key>code_sign</key>
+		<string>iPhone Distribution:</string>
 		<key>fir</key>
 		<dict>
 			<key>token</key>
@@ -50,15 +54,17 @@
 			<key>user_key</key>
 			<string>64838e4d304640eff69c8c25bccb120e</string>
 		</dict>
+		<key>profile_udid</key>
+		<string></string>
+		<key>projectName</key>
+		<string>APP</string>
 		<key>svn</key>
 		<dict>
 			<key>svn_path</key>
 			<string></string>
 		</dict>
 		<key>xc_path</key>
-		<string>/Users/xxxx/Desktop/WorkA/Project.xcodeproj</string>
-		<key>projectName</key>
-		<string>客户端</string>
+		<string>/Users/xxx/Desktop/NewCode/Project.xcworkspace</string>
 	</dict>
 	<key>TargetB</key>
 	<dict>
@@ -69,6 +75,10 @@
 			<key>password</key>
 			<string></string>
 		</dict>
+		<key>bundle_id</key>
+		<string>com.</string>
+		<key>code_sign</key>
+		<string>iPhone Distribution: </string>
 		<key>fir</key>
 		<dict>
 			<key>token</key>
@@ -76,17 +86,13 @@
 			<key>type</key>
 			<string>Adhoc</string>
 		</dict>
-		<key>pgyer</key>
+		<key>git</key>
 		<dict>
-			<key>api_key</key>
-			<string>1e698c2babf7970645bcc7e</string>
-			<key>password</key>
+			<key>git_path</key>
 			<string></string>
-			<key>type</key>
-			<integer>1</integer>
-			<key>user_key</key>
-			<string>6483869c8c25bccb120e</string>
 		</dict>
+		<key>ipaType</key>
+		<integer>1</integer>
 		<key>notification</key>
 		<dict>
 			<key>email_from_name</key>
@@ -101,29 +107,35 @@
 				<string>xxxxx@qq.com</string>
 			</array>
 		</dict>
-		<key>git</key>
+		<key>pgyer</key>
 		<dict>
-			<key>git_path</key>
+			<key>api_key</key>
+			<string>f170eb53ee741babeaafa371bd7c8a8c</string>
+			<key>password</key>
 			<string></string>
+			<key>type</key>
+			<integer>1</integer>
+			<key>user_key</key>
+			<string>1631812a23ae704f42ebc75ea93e1b3b</string>
 		</dict>
+		<key>profile_udid</key>
+		<string></string>
+		<key>projectName</key>
+		<string>APP</string>
 		<key>svn</key>
 		<dict>
 			<key>svn_path</key>
 			<string></string>
 		</dict>
-		<key>ipaType</key>
-		<integer>2</integer>
 		<key>xc_path</key>
-		<string>/Users/xxx/Desktop/WorkB/Project.xcworkspace</string>
-		<key>projectName</key>
-		<string>业务端</string>
+		<string>/Users/xxx/Desktop/Project.xcworkspace</string>
 	</dict>
 	<key>root_info</key>
 	<dict>
 		<key>Http_Serve</key>
 		<true/>
 		<key>Path_altool</key>
-		<string>/Users/xxx/Desktop/MyWorking/Andromeda/code/Andromeda/Applications/ApplicationLoader.app/Contents/Frameworks/ITunesSoftwareService.framework/Versions/A/Support/altool</string>
+		<string>/Users/xxx/Desktop/MyWorking/CDKit/Andromeda/code/Andromeda/Applications/ApplicationLoader.app/Contents/Frameworks/ITunesSoftwareService.framework/Versions/A/Support/altool</string>
 		<key>Path_ipa_plist</key>
 		<string>/Users/xxx/Desktop/MyWorking/CDKit/Andromeda/code/Andromeda/ArchivePlist</string>
 		<key>Target</key>

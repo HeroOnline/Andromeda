@@ -21,7 +21,7 @@ __author__ = 'LCD'
 import os
 from build_manage import *
 from http_serve import *
-
+import time
 # 读取plist 文件
 def setup():
     andromeda_plist = read_andromeda_plist()
@@ -60,10 +60,56 @@ def http_serve():
 # """
 # print(info_t)
 
-setup()
+#setup()
 
-# if __name__ == '__main__':
-#     http_serve_value('ProjectB', '1')
-    # setup()
+def build_1():
+    http_serve_value('TargetA', '1')
+
+
+def build_2():
+    http_serve_value('TargetB', '1')
+
+def build_3():
+    http_serve_value('TargetA', '1')
+    http_serve_value('TargetB', '1')
+
+
+
+def build():
+    print("""
+        流程包括如下
+        1：App -> 蒲公英：
+        2：App -> 蒲公英：
+        3：App+App -> 蒲公英：
+        4：App -> App Store：（ ！！请检查代码完整性与版本号 ！！）
+        5：App -> App Store：（ ！！请检查代码完整性与版本号 ！！）
+        6：App+App -> App Store：（ ！！请检查代码完整性与版本号 ！！）
+        888：全部流程 App+App -> 蒲公英 + App Store
+        """)
+
+    enums = input("请选择你需要执行的流程：1/2/3/4/5/6/7 ：")
+    try:
+        st = cd_timestamp()
+        if enums == '1':
+            build_1()
+        elif enums == '2':
+            build_2()
+        elif enums == '3':
+            build_3()
+        et = cd_timestamp()
+        print('用时：', int((et - st) / 60), '分钟')
+    except Exception as e:
+        print(e)
+        build()
+    else:
+        print
+        '已完成'
+        next = input("是否继续构建(Y/N)：")
+        if next == "Y" or next == "y":
+            build()
+
+
+if __name__ == '__main__':
+    build()
 
 

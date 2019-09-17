@@ -122,7 +122,7 @@ def build_ipa(pod=''):
         pod_install(main_path, pod)
 
     try:
-        ipa = Archive(main_path, buidPlist_path, schemes, is_workspace, ipa_type)
+        ipa = Archive(main_path, buidPlist_path, schemes, is_workspace, ipa_type, "", "", "")
     except Exception as e:
         print('---------->', e, '---------->')
     else:

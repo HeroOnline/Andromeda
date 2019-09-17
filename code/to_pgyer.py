@@ -45,4 +45,4 @@ def upload_to_pgyer(file, apikey, ukey, type=1, pwd='', des=''):
         pass
 
 
-# if __name__ == '__main__':
+#if __name__ == '__main__':
